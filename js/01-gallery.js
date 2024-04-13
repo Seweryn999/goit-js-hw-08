@@ -1,11 +1,8 @@
-// Add imports above this line
-
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-import { galleryItems } from './gallery-items';
+import { galleryItems } from './gallery-items.js';
 
 // Change code below this line
 
+console.log(galleryItems);
 const link = document.querySelector('.gallery');
 
 for (const obj of galleryItems) {
@@ -50,5 +47,3 @@ function showImage(event) {
     }
   }
 }
-
-console.log(galleryItems);
