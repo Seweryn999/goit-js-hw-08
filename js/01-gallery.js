@@ -1,4 +1,8 @@
-import { galleryItems } from './gallery-items.js';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import { galleryItems } from './gallery-items';
+
+// Add imports above this line
 
 // Change code below this line
 
@@ -24,26 +28,8 @@ for (const obj of galleryItems) {
   anchor.appendChild(image);
 }
 
-link.addEventListener('click', showImage);
+var lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 });
 
-function showImage(event) {
+link.addEventListener('click', event => {
   event.preventDefault();
-  const instance = basicLightbox.create(
-    `<img src='${event.target.dataset.source}'/>`,
-    {
-      onShow: () => {
-        document.addEventListener('keydown', closeModal);
-      },
-      onClose: () => {
-        document.removeEventListener('keydown', closeModal);
-      },
-    }
-  );
-  instance.show();
-
-  function closeModal(event) {
-    if (event.key === 'Escape') {
-      instance.close();
-    }
-  }
-}
+});
