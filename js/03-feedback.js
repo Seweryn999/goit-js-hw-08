@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('[name=email]');
