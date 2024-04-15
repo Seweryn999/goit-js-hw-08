@@ -1,0 +1,2 @@
+const e=document.querySelector("iframe"),t=new Vimeo.Player(e);t.on("play",(function(){console.log("played the video!")})),t.getVideoTitle().then((function(e){console.log("title:",e)}));const o=localStorage.getItem("videoplayer-current-time");o&&t.setCurrentTime(parseFloat(o));const n=_.throttle;t.on("timeupdate",n((async()=>{const e=await t.getCurrentTime();localStorage.setItem("videoplayer-current-time",e.toString())}),1e3));
+//# sourceMappingURL=02-video.99c45bbe.js.map
